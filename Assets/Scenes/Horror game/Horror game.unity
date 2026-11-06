@@ -8549,7 +8549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6eb19901ff7f04abd34e47c3ac3907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  health: 100
+  health: 1000
   damage: 20
   hurtSound: {fileID: 8300000, guid: fe40202da1d841c45938c52b634812cd, type: 3}
   hurtAudioSource: {fileID: 1417888882}

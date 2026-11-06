@@ -5,31 +5,34 @@ public class Enemyhealth : MonoBehaviour
 {
     public int health;
     public AudioClip deathSound;
-    AudioSource audioSource;
+
     Renderer rend;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    bool isDead = false;
+
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         rend = GetComponent<Renderer>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void TakeDamage()
     {
+        if (isDead) return;
+
         health--;
-        StartCoroutine(FlashRed());
 
         if (health <= 0)
         {
+            isDead = true;
             Gamemanager.instance.EnemyKilled();
-            audioSource.PlayOneShot(deathSound);
-            Destroy(gameObject, deathSound.length);
+
+            if (deathSound != null)
+                AudioSource.PlayClipAtPoint(deathSound, transform.position);
+
+            Destroy(gameObject);
+        }
+        else
+        {
+            StartCoroutine(FlashRed());
         }
     }
 
