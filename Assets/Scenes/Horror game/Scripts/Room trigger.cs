@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Roomtrigger : MonoBehaviour
 {
@@ -22,4 +22,3 @@ public class Roomtrigger : MonoBehaviour
         }
     }
 }
-
