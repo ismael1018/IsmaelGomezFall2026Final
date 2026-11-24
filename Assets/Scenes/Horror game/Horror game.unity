@@ -6354,6 +6354,7 @@ Transform:
   m_Children:
   - {fileID: 367368573}
   - {fileID: 1677522092}
+  - {fileID: 858758370}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781458771
@@ -6648,6 +6649,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816972258}
   m_CullTransparentMesh: 1
+--- !u!1 &820536196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2669341271934346893, guid: 1587e483cf003af47a5e28cfd7892cb2, type: 3}
+  m_PrefabInstance: {fileID: 1450146399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &820536198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820536196}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00945, y: 0.02045, z: 0.00042500335}
+  m_Center: {x: 0.0047250013, y: 0, z: 0.00021251157}
+--- !u!114 &820536199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820536196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76defdbc680256a4b86c70457b5f4fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Door
+  isLocked: 0
+  neverOpens: 0
+  onlyOpensFromInside: 0
+  insidePoint: {fileID: 0}
+  outsidePoint: {fileID: 0}
+  hinge: {fileID: 1697240520}
+  openAngle: -90
+  openTime: 0.8
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
+  closeClearance: 1.2
+--- !u!114 &820536202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820536196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &858758364
 GameObject:
   m_ObjectHideFlags: 0
@@ -6998,12 +7068,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858758364}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.3516066, y: 31.656925, z: 9.822798}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.68906665, y: 0.14534569, z: -1.7681026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 776076872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!43 &880278131
 Mesh:
@@ -9364,19 +9434,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1555997744}
+    m_TransformParent: {fileID: 1697240520}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1587e483cf003af47a5e28cfd7892cb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.11084494
+      value: 0.448
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1587e483cf003af47a5e28cfd7892cb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.955
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1587e483cf003af47a5e28cfd7892cb2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.8926604
+      value: 0.0026602745
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1587e483cf003af47a5e28cfd7892cb2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9413,7 +9483,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2669341271934346893, guid: 1587e483cf003af47a5e28cfd7892cb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 820536199}
+    - targetCorrespondingSourceObject: {fileID: 2669341271934346893, guid: 1587e483cf003af47a5e28cfd7892cb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 820536198}
+    - targetCorrespondingSourceObject: {fileID: 2669341271934346893, guid: 1587e483cf003af47a5e28cfd7892cb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 820536202}
   m_SourcePrefab: {fileID: 100100000, guid: 1587e483cf003af47a5e28cfd7892cb2, type: 3}
 --- !u!4 &1450146400 stripped
 Transform:
@@ -10320,7 +10399,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1450146400}
+  - {fileID: 1697240520}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559504304
@@ -13822,6 +13901,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1697240519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697240520}
+  m_Layer: 0
+  m_Name: Door hinge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1697240520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697240519}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.427, y: 0.955, z: 3.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1450146400}
+  m_Father: {fileID: 1555997744}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1731044691
 GameObject:
   m_ObjectHideFlags: 0
@@ -15041,7 +15152,6 @@ SceneRoots:
   - {fileID: 2096603263}
   - {fileID: 1465163592}
   - {fileID: 776076872}
-  - {fileID: 858758370}
   - {fileID: 894126259}
   - {fileID: 303679238}
   - {fileID: 1081320341}
